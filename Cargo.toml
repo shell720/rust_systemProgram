@@ -1,0 +1,55 @@
+[package]
+name = "RustInAction"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+piston_window = "0.117"
+piston2d-graphics = "0.39"
+rand = "0.8"
+
+bincode = "1"
+serde = "1"
+serde_cbor = "0.8"
+serde_derive = "1"
+serde_json = "1"
+
+byteorder = "1.2"
+crc = "1.7"
+
+reqwest = "0.9"
+trust-dns = { version = "0.16", default-features = false }
+clap = "2"
+
+chrono = "0.4"
+
+[target.'cfg(window)'.dependencies]
+winapi = "0.2"
+kernel32-sys = "0.2"
+
+[target.'cfg(not(window))'.dependencies]
+libc = "0.2"
+
+[lib]
+name = "libactionkv"
+path = "src/lib.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "akv_mem"
+path = "src/akv_mem.rs"
+
+[[bin]]
+name = "akv_disk"
+path = "src/akv_disk.rs"
+
+[[bin]]
+name = "rpg"
+path = "src/rpg.rs"
+
+[[bin]]
+name = "dns"
+path = "src/dns.rs"

@@ -1,11 +1,12 @@
-mod kani_test;
-mod visualize_f32;
+//mod kani_test;
+//mod visualize_f32;
 //mod q7_format;
-mod cpu;
-mod pointer_intro;
+//mod cpu;
+//mod pointer_intro;
 //mod check_heapCost;
-mod files;
-mod nw;
+//mod files;
+//mod nw;
+mod clock;
 
 fn main() {
     // section5();
@@ -13,25 +14,31 @@ fn main() {
     
     // section6();
     // section7();
-    section8();
+    // section8();
+    section9();
+}
+
+fn section9(){
+    clock::main();
 }
 
 fn section8(){
     // nw::basic_httpreq();
-    nw::http_bytcpconn();
+    // nw::http_bytcpconn();
+    //nw::macgen();
 }
 
 fn section7(){
     //files::serialize();
     //files::hexdump();
-    files::writebyte_123();
+    // files::writebyte_123();
 }
 
 fn section6(){
-    pointer_intro::main();
-    pointer_intro::rawPointer_cast();
-    pointer_intro::release_heapMemory();
-    //check_heapCost::main();
+    // pointer_intro::main();
+    // pointer_intro::rawPointer_cast();
+    // pointer_intro::release_heapMemory();
+    // check_heapCost::main();
 }
 
 fn section5(){
