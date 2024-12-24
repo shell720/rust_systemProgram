@@ -5,6 +5,7 @@ mod cpu;
 mod pointer_intro;
 //mod check_heapCost;
 mod files;
+mod nw;
 
 fn main() {
     // section5();
@@ -12,7 +13,12 @@ fn main() {
     
     // section6();
     // section7();
+    section8();
+}
 
+fn section8(){
+    // nw::basic_httpreq();
+    nw::http_bytcpconn();
 }
 
 fn section7(){
