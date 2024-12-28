@@ -1,7 +1,0 @@
-cargo:rerun-if-changed=/Users/smasuda/tasks/RustIA-os/Cargo.toml
-cargo:rustc-link-search=native=/Users/smasuda/tasks/RustIA-os/target/bootimage/bootloader/x86_64-bootloader/release/build/bootloader-4b59a15d4292c239/out
-cargo:rustc-link-lib=static=kernel_bin-fledgeos
-cargo:rerun-if-env-changed=KERNEL
-cargo:rerun-if-env-changed=KERNEL_MANIFEST
-cargo:rerun-if-changed=/Users/smasuda/tasks/RustIA-os/target/fledge/debug/fledgeos
-cargo:rerun-if-changed=build.rs
