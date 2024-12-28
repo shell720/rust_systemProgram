@@ -23,6 +23,12 @@ clap = "2"
 
 chrono = "0.4"
 
+svg = "0.6.0"
+rayon = "1"
+crossbeam = "0.7"
+
+libc = "0.2"
+
 [target.'cfg(window)'.dependencies]
 winapi = "0.2"
 kernel32-sys = "0.2"
@@ -53,3 +59,7 @@ path = "src/rpg.rs"
 [[bin]]
 name = "dns"
 path = "src/dns.rs"
+
+[[bin]]
+name = "render_hex"
+path = "src/render_hex.rs"

@@ -1,0 +1,7 @@
+/Users/smasuda/tasks/RustIA-os/target/fledge/debug/deps/libbit_field-5f93ba0c07f9e17c.rmeta: /Users/smasuda/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bit_field-0.9.0/src/lib.rs
+
+/Users/smasuda/tasks/RustIA-os/target/fledge/debug/deps/libbit_field-5f93ba0c07f9e17c.rlib: /Users/smasuda/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bit_field-0.9.0/src/lib.rs
+
+/Users/smasuda/tasks/RustIA-os/target/fledge/debug/deps/bit_field-5f93ba0c07f9e17c.d: /Users/smasuda/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bit_field-0.9.0/src/lib.rs
+
+/Users/smasuda/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bit_field-0.9.0/src/lib.rs:

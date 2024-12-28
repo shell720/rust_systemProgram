@@ -1,3 +1,7 @@
+#![feature(link_llvm_intrinsics)]
+#[macro_use]
+extern crate crossbeam;
+
 //mod kani_test;
 //mod visualize_f32;
 //mod q7_format;
@@ -6,7 +10,9 @@
 //mod check_heapCost;
 //mod files;
 //mod nw;
-mod clock;
+//mod clock;
+//mod parallel;
+mod warikomi;
 
 fn main() {
     // section5();
@@ -15,11 +21,28 @@ fn main() {
     // section6();
     // section7();
     // section8();
-    section9();
+    //section9();
+    //section10();
+    section12();
+}
+
+fn section12(){
+    // warikomi::sixty();
+    //warikomi::main();
+    //warikomi::change_sigfun();
+    warikomi::sisj();
+}
+
+fn section10(){
+    //parallel::two_threads();
+    //parallel::many_threads_sleep();
+    //parallel::many_threads_busyweight();
+    //parallel::channel_intro();
+    //parallel::channel_duplex();
 }
 
 fn section9(){
-    clock::main();
+    //clock::main();
 }
 
 fn section8(){

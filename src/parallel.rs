@@ -71,3 +71,48 @@ pub fn many_threads_busyweight(){
         println!{"{}\t{:02?}", n, finish.duration_since(start)};
     }
 }
+
+use crossbeam::channel::unbounded;
+pub fn channel_intro(){
+    let (tx, rx) = unbounded();
+
+    thread::spawn(move || {
+        tx.send(109).unwrap();  
+    });
+
+    select!{
+        recv(rx) -> msg => println!("{:?}", msg),
+    }
+}
+
+#[derive(Debug)]
+enum ConnectivityCheck{
+    Ping,
+    Pong,
+    Pang,
+}
+
+pub fn channel_duplex(){
+    let n_message = 3;
+    let (requestes_tx, requests_rx) = unbounded();
+    let (responses_tx, responses_rx) = unbounded();
+    
+    thread::spawn(move || loop{
+        match requests_rx.recv().unwrap(){
+            ConnectivityCheck::Pong => eprintln!("unexpected pong response"),
+            ConnectivityCheck::Ping => responses_tx.send(ConnectivityCheck::Pong).unwrap(),
+            ConnectivityCheck::Pang => return,
+        }
+    });
+
+    for _ in 0..n_message{
+        requestes_tx.send(ConnectivityCheck::Ping).unwrap();
+    }
+    requestes_tx.send(ConnectivityCheck::Pang).unwrap();
+
+    for _ in 0..n_message{
+        select!{
+            recv(responses_rx) -> msg => println!("{:?}", msg),
+        }
+    }
+}
